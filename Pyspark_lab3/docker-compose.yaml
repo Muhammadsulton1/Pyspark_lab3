@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+    lab3:
+        image: mcr.microsoft.com/mssql/server:2019-latest # Or whatever version you want
+        container_name: sql1
+        restart: unless-stopped
+        ports:
+            - "1433:1433"
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=12345Muh@
+            - MSSQL_PID=Developer
+            - MSSQL_AGENT_ENABLED=True
